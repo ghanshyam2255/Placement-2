@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Api_Department";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h2 class="mb-2">Customer List</h2>
+    <div class="d-flex justify-content-end mb-2">
+        <a asp-action="Create" class="btn btn-outline-primary btn-sm rounded-3"> <i class="bi bi-plus-circle"></i> Add Department </a>
+    </div>
+    <div class="table-responsive">
+        <table id="example" class="display" style="width:100%">
+            <thead class="thead-dark">
+                <tr>
+                    <th class="text-start">Sr no</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th class="text-start">Phone Number</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="customerTableBody">
+            </tbody>
+        </table>
+    </div>
+    </div>
+    @section Scripts {
+    <script>
+        console.log('Hello');
+            $.ajax({
+                url: 'https://localhost:7202/api/Department/Get',
+                method: 'GET',
+                success: function (response) {
+                    alert('Hello');
+                    debugger;
+                    // Handle the API response here
+                    console.log(response);
+                },
+                error: function (xhr, status, error) {
+                    // Handle errors here
+                    console.error(status, error);
+                }
+            });
+     </script>
+    }

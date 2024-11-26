@@ -1,0 +1,61 @@
+﻿@model List<department>
+
+
+
+<p>This IS Department Page</p>
+
+<a asp-area="" asp-controller="Department" asp-action="Create">Add</a>
+
+
+<table class="table"
+    <tr>
+        <th>Id</th>
+        <th>DepartmentName</th>
+       @*  <th>IsActive</th>
+        <th>CreateDate</th>
+        <th>CreatedBy</th>
+        <th>ModifiedAt</th>
+        <th>Modifiedby</th> *@
+
+</tr>
+
+    @foreach (var data in Model)
+    {
+            <tr>
+                    <td>@data.ID</td>
+                     <td>@data.DepartmentName</td>
+                    @* <td>@data.Email</td>
+                    <td>@data.ContactNumber</td>
+                    <td>@data.Address</td> *@
+                    <td>
+                          <a href="@Url.Action("Update","Department", new {ID = data.ID})">Edit</a>
+                          <a href="@Url.Action("Delete","Department", new {ID = data.ID})" class="mb-lg-3">Delete</a>
+                    </td>
+            </tr>
+
+    }
+</table>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<link href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+<script>
+    $(document).ready(function () {
+        $('#myTable').DataTable({
+            "paging": true,
+            "searching": true,
+            "ordering": true,
+            "info": true,
+            "bDestroy": true,
+
+        });
+    });
+
+
+
+
+
+
+</script>

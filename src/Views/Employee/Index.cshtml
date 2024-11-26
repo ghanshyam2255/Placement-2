@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Employee Page";
+}
+@model List<Employee>
+
+
+<a asp-area="" asp-controller="Employee" asp-action="CreateEmployee">Add</a>
+
+<table id="myTable" class="display table">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Contact</th>
+        <th>Address</th>
+        <th>Action</th>
+
+</tr>
+    </thead> 
+    <tbody>
+
+    @foreach(var data in Model)
+    {
+        <tr>
+                <td>@data.Id</td>
+                <td>@data.Name</td>
+                <td>@data.Email</td>
+                <td>@data.ContactNumber</td>
+                <td>@data.Address</td>
+                <td>
+                      <a href="@Url.Action("Update","Employee", new {ID = data.Id})">Edit</a>
+                      <a href="@Url.Action("Delete","Employee", new {ID = data.Id})" class="mb-lg-3">Delete</a>
+                </td>
+        </tr>
+    }
+    </tbody>
+
+</table>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<link href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+<script>
+    // $(document).ready(function () {
+    //     $('#myTable').DataTable({
+    //         "paging": true,
+    //         "searching": true,
+    //         "ordering": true,
+    //         "info": true,
+    //         "bDestroy": true,
+
+    //     });
+    // });
+
+
+
+
+
+
+</script>

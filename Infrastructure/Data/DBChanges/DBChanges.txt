@@ -1,0 +1,6 @@
+﻿place all DDL Queries Here
+
+Ex.. Create, Alter(UPDATE), Drop, Insert, Update
+
+27 sept 24
+

@@ -1,0 +1,23 @@
+﻿@model department
+
+@{
+    ViewData["Title"] = "Update Department Page";
+}
+@* @model List<Employee> *@
+
+<p>Update Department</p>
+
+
+
+
+    <form asp-action="Update" asp-controller="Department" method="post" class="form">
+    <div class="container bg-dark bg-opacity-25 p-4 rounded">
+        <div class="form-group">
+            <label for="DepartmentName">DepartmentName</label>
+            <input type="text" asp-for="DepartmentName" class="form-control" />
+        </div> 
+  
+        <button type="submit" class="btn btn-primary">Update</button>
+
+       </div>
+    </form>
